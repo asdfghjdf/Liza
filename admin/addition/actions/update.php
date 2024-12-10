@@ -15,3 +15,5 @@ $stmt->execute([
 ]);
 
 header('Location: /admin/addition/');
+
+?>
