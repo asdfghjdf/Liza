@@ -48,7 +48,7 @@ $goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <nav>
-    <a href="/admin/index.php">Перечень</a>
+    <a href="/admin/index.php">Назад</a>
 </nav>
 <h1 id="p1">Товары</h1>
 <table>
@@ -69,7 +69,6 @@ $goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $good['article'] ?></td>
             <td><a href="/admin/goods/edit.php?id=<?= $good['id']?>">Редактировать</a></td>
             <td><a href="/admin/goods/actions/delete.php?id=<?= $good['id']?>">Удалить</a></td>
-            <td><a href="/admin/addition">Добавить количество</a></td>
         </tr>
     <?php endforeach ?>
     <td><a href="/admin/goods/create.php">Добавить товар</a></td>

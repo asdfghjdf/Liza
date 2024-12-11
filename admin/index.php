@@ -3,6 +3,7 @@
 /** @var PDO $pdo */
 $pdo= require $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 $goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
+$addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -47,13 +48,16 @@ $goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-
-<h1 id="p1">Товары</h1>
+<a href="/admin/goods/index.php">Перейти к товарам</a>
+<a href="/admin/addition/index.php">Перейти к поступлениям</a>
+<h1 id="p1">Общая сводка</h1>
 <table>
     <thead>
     <tr>
         <th>#</th>
         <th>Название</th>
+        <th>Цена</th>
+        <th>Артикль</th>
         <th>Дата</th>
         <th>Количество</th>
     </tr>
@@ -65,9 +69,10 @@ $goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $good['name'] ?></td>
             <td><?= $good['price'] ?></td>
             <td><?= $good['article'] ?></td>
-            <td><a href="/admin/goods/create.php">Добавить</a></td>
-            <td><a href="/admin/goods/edit.php?id=<?= $good['id']?>">Редактировать</a></td>
-            <td><a href="/admin/goods/actions/delete.php?id=<?= $good['id']?>">Удалить</a></td>
+        <?php foreach ($addition as $additions): ?>
+            <td><?= $additions['date'] ?></td>
+            <td><?= $additions['quantity'] ?></td>
+        <?php endforeach ?>
         </tr>
     <?php endforeach ?>
     </tbody>

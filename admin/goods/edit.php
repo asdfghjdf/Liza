@@ -2,7 +2,7 @@
 /** @var PDO $pdo */
 $pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 
-$stmt = $pdo->prepare("SELECT * FROM s WHERE id = ?");
+$stmt = $pdo->prepare("SELECT * FROM goods WHERE id = ?");
 $stmt->execute([$_GET['id']??'']);
 $good = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -61,6 +61,7 @@ $good = $stmt->fetch(PDO::FETCH_ASSOC);
 </style>
 <body>
 <form action="/admin/goods/actions/update.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $good['id']?>">
     <input type="text" name="name" value="<?= $good['name']?>">
     <input type="number" name="price"value="<?= $good['price'] ?>">
     <input type="number" name="article"value="<?= $good['article'] ?>">

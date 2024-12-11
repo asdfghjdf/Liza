@@ -47,10 +47,10 @@ $addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <nav>
-    <a href="/goods/index.php">Назад</a>
+    <a href="/admin/index.php">Назад</a>
 </nav>
 
-<h1 id="p1">Товары</h1>
+<h1 id="p1">Поступление</h1>
 <table>
     <thead>
     <tr>
