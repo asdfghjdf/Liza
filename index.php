@@ -1,9 +1,8 @@
 <?php
 
 /** @var PDO $pdo */
-$pdo= require $_SERVER['DOCUMENT_ROOT'].'/db.php';
-$addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
-var_dump($addition);
+$pdo= require $_SERVER['DOCUMENT_ROOT'] . '/db.php';
+$goods = $pdo -> query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ var_dump($addition);
 </head>
 <body>
 <nav>
-    <a href="/goods/index.php">Назад</a>
+    <a href="/admin/index.php">Зайти как администратор</a>
 </nav>
 
 <h1 id="p1">Товары</h1>
@@ -63,15 +62,12 @@ var_dump($addition);
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($addition as $additions): ?>
+    <?php foreach ($goods as $good): ?>
         <tr>
-            <td><?= $additions['article'] ?></td>
-            <td><?= $additions['name'] ?></td>
-            <td><?= $additions['date'] ?></td>
-            <td><?= $additions['quantity'] ?></td>
-            <td><a href="/admin/addition/create.php">Добавить</a></td>
-            <td><a href="/admin/addition/edit.php?article=<?= $additions['article']?>">Редактировать</a></td>
-            <td><a href="/admin/addition/actions/delete.php?article=<?= $additions['article']?>">Удалить</a></td>
+            <td><?= $good['id'] ?></td>
+            <td><?= $good['name'] ?></td>
+            <td><?= $good['price'] ?></td>
+            <td><?= $good['article'] ?></td>
         </tr>
     <?php endforeach ?>
     </tbody>
