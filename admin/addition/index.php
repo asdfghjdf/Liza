@@ -47,7 +47,7 @@ $addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <nav>
-    <a href="/admin/index.php">Назад</a>
+    <a href="/admin/index.php" id="c4">Назад</a>
 </nav>
 
 <h1 id="p1">Поступление</h1>
@@ -67,11 +67,11 @@ $addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $additions['name'] ?></td>
             <td><?= $additions['date'] ?></td>
             <td><?= $additions['quantity'] ?></td>
-            <td><a href="/admin/addition/create.php">Добавить</a></td>
-            <td><a href="/admin/addition/edit.php?article=<?= $additions['article']?>">Редактировать</a></td>
-            <td><a href="/admin/addition/actions/delete.php?article=<?= $additions['article']?>">Удалить</a></td>
+            <td><a href="/admin/addition/edit.php?article=<?= $additions['article']?>" id="c1">Редактировать</a></td>
+            <td><a href="/admin/addition/actions/delete.php?article=<?= $additions['article']?>" id="c2">Удалить</a></td>
         </tr>
     <?php endforeach ?>
+    <td><a href="/admin/addition/create.php" id="c3">Добавить</a></td>
     </tbody>
 </table>
 </body>

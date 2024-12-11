@@ -65,7 +65,7 @@ $addition = $stmt->fetch(PDO::FETCH_ASSOC);
     <input type="text" name="name" value="<?= $addition['name']?>">
     <input type="date" name="date"value="<?= $addition['date'] ?>">
     <input type="number" name="quantity"value="<?= $addition['quantity'] ?>">
-    <input type="submit">
+    <input type="submit" id="submit">
 </form>
 </body>
 </html>

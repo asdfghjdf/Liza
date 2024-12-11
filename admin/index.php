@@ -48,8 +48,8 @@ $addition = $pdo -> query("SELECT * FROM addition")->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-<a href="/admin/goods/index.php">Перейти к товарам</a>
-<a href="/admin/addition/index.php">Перейти к поступлениям</a>
+<a href="/admin/goods/index.php" id="a1">Перейти к товарам</a>
+<a href="/admin/addition/index.php" id="a2">Перейти к поступлениям</a>
 <h1 id="p1">Общая сводка</h1>
 <table>
     <thead>

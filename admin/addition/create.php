@@ -51,7 +51,7 @@
     <input type="text" name="name" placeholder="Название">
     <input type="date" name="date" placeholder="Время">
     <input type="number" name="quantity" placeholder="Количество">
-    <input type="submit">
+    <input type="submit" id="submit">
 </form>
 </body>
 </html>

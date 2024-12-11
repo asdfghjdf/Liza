@@ -50,7 +50,7 @@ body, h1, table {x
     <input type="text" name="name" placeholder="Название">
     <input type="number" name="price" placeholder="цена">
     <input type="number" name="article" placeholder="article">
-    <input type="submit">
+    <input type="submit" id="submit">
 </form>
 </body>
 </html>

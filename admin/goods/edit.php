@@ -65,7 +65,7 @@ $good = $stmt->fetch(PDO::FETCH_ASSOC);
     <input type="text" name="name" value="<?= $good['name']?>">
     <input type="number" name="price"value="<?= $good['price'] ?>">
     <input type="number" name="article"value="<?= $good['article'] ?>">
-    <input type="submit">
+    <input type="submit" id="submit">
 </form>
 </body>
 </html>
