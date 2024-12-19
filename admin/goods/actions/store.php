@@ -11,3 +11,5 @@ $stmt->execute([
 ]);
 
 header('Location: /admin/goods/');
+
+?>
